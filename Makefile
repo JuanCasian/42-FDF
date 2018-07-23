@@ -6,7 +6,7 @@
 #    By: jcasian <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 14:03:41 by jcasian           #+#    #+#              #
-#    Updated: 2018/07/23 15:33:54 by jcasian          ###   ########.fr        #
+#    Updated: 2018/07/23 16:00:03 by jcasian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,3 +34,9 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+debug:
+	gcc -g -Wall -Wextra -Werror -I$(INCLUDES) srcs/*.c libft/*.c -o debug
+
+debugclean:
+	rm -rf debug* 

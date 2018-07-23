@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 12:20:31 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 12:20:33 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/23 16:05:41 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_filetostr(int fd)
 	int			i;
 	char	*filestr;
 
+	filestr = NULL;
 	buf = ft_strnew(BUFF_SIZE);
 	while ((i = read(fd, buf, BUFF_SIZE)) > 0)
 	{
