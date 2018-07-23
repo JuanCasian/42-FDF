@@ -6,11 +6,11 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 19:30:24 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/19 21:54:04 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/23 14:31:54 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static	int	get_new_line(int fd, char **filestrs, char **line)
 {

@@ -20,25 +20,27 @@
 
 char	*ft_filetostr(int fd)
 {
-	char	buf[BUFF_SIZE];
-	char	*str;
-	char	*nstr;
-	int		n;
-	size_t	len;
+	char		*buf;
+	char		*tmp;
+	int			i;
+	char	*filestr;
 
-	str = NULL;
-	len = 0;
-	while ((n = read(fd, buf, BUFF_SIZE)))
+	buf = ft_strnew(BUFF_SIZE);
+	while ((i = read(fd, buf, BUFF_SIZE)) > 0)
 	{
-		if (n < 0)
-			return (NULL);
-		if (!(nstr = ft_strnew(len + n)))
-			return (NULL);
-		nstr = ft_strncat(nstr, str, len);
-		nstr = ft_strncat(nstr, (char*)buf, n);
-		free((void*)str);
-		str = nstr;
-		len += n;
+		if (!filestr)
+		{
+			filestr = ft_strnew(ft_strlen(buf));
+			ft_strcpy(filestr, buf);
+		}
+		else
+		{
+			tmp = filestr;
+			filestr = ft_strjoin(filestr, buf);
+			free(tmp);
+		}
+		ft_memset(buf, 0, BUFF_SIZE);
 	}
-	return (str);
+	free(buf);
+	return (filestr);
 }
