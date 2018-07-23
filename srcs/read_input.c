@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read_input.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 14:20:39 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/23 14:47:49 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/23 14:49:03 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/23 15:36:55 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int argc, char **argv)
+void	read_input(int fd)
 {
-	int fd;
+	char	*filestr;
 
-	if (argc == 2)
-	{
-		if ((fd = open(argv[1], O_RDONLY)) < 0)
-		{
-			ft_putstr(argv[1]);
-			ft_putendl(" could not be opened");
-		}
-		else
-		{
-			read_input(fd);
-		}
-	}
-	else
-		ft_putendl("usage: ./fdf PathToMap");
-	return (0);	
+	filestr = ft_filetostr(fd);	
+	ft_putstr(filestr);
 }

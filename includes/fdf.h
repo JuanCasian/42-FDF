@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 14:20:39 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/23 14:47:49 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/23 14:34:04 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/23 14:48:28 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#ifndef FDF_H
+# define FDF_H
 
-int	main(int argc, char **argv)
-{
-	int fd;
+# include "../libft/libft.h"
 
-	if (argc == 2)
-	{
-		if ((fd = open(argv[1], O_RDONLY)) < 0)
-		{
-			ft_putstr(argv[1]);
-			ft_putendl(" could not be opened");
-		}
-		else
-		{
-			read_input(fd);
-		}
-	}
-	else
-		ft_putendl("usage: ./fdf PathToMap");
-	return (0);	
-}
+void	read_input(int fd);
+
+#endif
