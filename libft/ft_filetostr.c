@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 12:20:31 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/23 16:05:41 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/24 13:15:29 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 char	*ft_filetostr(int fd)
 {
-	char		*buf;
-	char		*tmp;
-	int			i;
+	char	*buf;
+	char	*tmp;
+	int		i;
 	char	*filestr;
 
 	filestr = NULL;

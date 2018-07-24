@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:34:04 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/23 14:48:28 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/24 13:20:09 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include "../libft/libft.h"
 
-void	read_input(int fd);
+typedef struct	s_board
+{
+	int		**board;
+	int		n_rows;
+	int		n_columns;
+}				t_board;
+
+t_board			*read_input(int fd);
 
 #endif

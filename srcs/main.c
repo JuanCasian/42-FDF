@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:20:39 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/23 14:47:49 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/24 13:20:34 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	int fd;
+	int		fd;
+	t_board	*fb;
 
 	if (argc == 2)
 	{
@@ -25,10 +26,10 @@ int	main(int argc, char **argv)
 		}
 		else
 		{
-			read_input(fd);
+			fb = read_input(fd);
 		}
 	}
 	else
 		ft_putendl("usage: ./fdf PathToMap");
-	return (0);	
+	return (0);
 }
