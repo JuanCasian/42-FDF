@@ -6,7 +6,7 @@
 #    By: jcasian <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 14:03:41 by jcasian           #+#    #+#              #
-#    Updated: 2018/07/23 16:00:03 by jcasian          ###   ########.fr        #
+#    Updated: 2018/07/23 21:38:28 by jcasian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,4 +39,6 @@ debug:
 	gcc -g -Wall -Wextra -Werror -I$(INCLUDES) srcs/*.c libft/*.c -o debug
 
 debugclean:
-	rm -rf debug* 
+	rm -rf debug*
+
+redebug: debugclean debug
