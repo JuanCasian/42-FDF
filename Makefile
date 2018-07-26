@@ -6,7 +6,7 @@
 #    By: jcasian <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 14:03:41 by jcasian           #+#    #+#              #
-#    Updated: 2018/07/24 13:43:42 by jcasian          ###   ########.fr        #
+#    Updated: 2018/07/24 14:11:35 by jcasian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,10 @@ NAME = fdf
 SRCSDIR = srcs
 LIBSDIR = libs
 SRCS = $(addprefix $(SRCSDIR)/,\
-	  main.c read_input.c) 
+	  main.c read_input.c fdf.c) 
 INCLUDES = includes
 OBJECTS = $(patsubst %.c, %.o, $(SRCS))
+MINILIBX = -L$(LIBSDIR) -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
@@ -25,7 +26,7 @@ all: $(NAME)
 	gcc -c -Wall -Werror -Wextra -I$(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJECTS)
-	gcc -o $(NAME) $(OBJECTS) -L$(LIBSDIR) -lft -L$(LIBSDIR) -lmlx
+	gcc -o $(NAME) $(OBJECTS) -L$(LIBSDIR) -lft $(MINILIBX) 
 
 clean:
 	rm -f $(OBJECTS)

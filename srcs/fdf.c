@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 14:20:39 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/25 18:19:47 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/24 14:02:00 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/24 14:52:48 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int argc, char **argv)
+void	fdf(t_board *fb)
 {
-	int		fd;
-	t_board	*ob;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	int		x;
 
-	if (argc == 2)
+	x = 500;
+	mlx_ptr = mlx_init();
+	win_ptr = mlx_new_window(mlx_ptr, 500, 500, "Hello Window");
+	while (x > 0)
 	{
-		if ((fd = open(argv[1], O_RDONLY)) < 0)
-		{
-			ft_putstr(argv[1]);
-			ft_putendl(" could not be opened");
-		}
-		else
-		{
-			ob = read_input(fd);
-			fdf(ob);
-		}
+		mlx_pixel_put(mlx_ptr, win_ptr, x, x * 2 + 1, 0xFFFFFF);
+		x--;
 	}
-	else
-		ft_putendl("usage: ./fdf PathToMap");
-	return (0);
+	mlx_loop(mlx_ptr);
+	fb = NULL;
+	
 }
