@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   put_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/24 14:02:00 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/24 14:52:48 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/25 18:34:41 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/25 18:42:50 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	fdf(t_board *fb)
+void	put_error(int err)
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	int		x;
+	char *errormsg[3];
 
-	x = 500;
-	mlx_ptr = mlx_init();
-	win_ptr = mlx_new_window(mlx_ptr, 500, 500, "Hello Window");
-	while (x > 0)
-	{
-		mlx_pixel_put(mlx_ptr, win_ptr, x, x * 2 + 1, 0xFFFFFF);
-		x--;
-	}
-	mlx_loop(mlx_ptr);
-	fb = NULL;
-	
+	errormsg[0] = "Usage: ./fdf path/to/file";
+	errormsg[1] = "ERROR: Could not open specified file";
+	errormsg[2] = "ERROR: Could not malloc memory";
+	ft_putendl(errormsg[err]);
+	exit(-1);
 }

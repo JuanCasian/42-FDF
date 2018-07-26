@@ -6,7 +6,7 @@
 #    By: jcasian <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 14:03:41 by jcasian           #+#    #+#              #
-#    Updated: 2018/07/24 14:11:35 by jcasian          ###   ########.fr        #
+#    Updated: 2018/07/25 20:20:32 by jcasian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = fdf
 SRCSDIR = srcs
 LIBSDIR = libs
 SRCS = $(addprefix $(SRCSDIR)/,\
-	  main.c read_input.c fdf.c) 
+	  main.c put_error.c create_boards.c print_boardsinfo.c) 
 INCLUDES = includes
 OBJECTS = $(patsubst %.c, %.o, $(SRCS))
 MINILIBX = -L$(LIBSDIR) -lmlx -framework OpenGL -framework AppKit
