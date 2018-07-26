@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 18:28:55 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/25 20:19:32 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/26 16:44:31 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int argc, char **argv)
 		if (!(boards[cb] = (t_board*)malloc(sizeof(t_board))))
 			put_error(2);
 		boards = create_boards(boards, fd);
-		print_boardsinfo(boards);
+		fdf(boards);
 		free(boards);
 	}
 	else
