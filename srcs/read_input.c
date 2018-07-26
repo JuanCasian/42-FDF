@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:49:03 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/24 13:19:08 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/25 18:20:33 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_board			*read_input(int fd)
 	char	**two_dstr;
 	char	***num_strs;
 	int		n_rows;
-	t_board	*fb;
+	t_board	*ob;
 
 	n_rows = 0;
 	filestr = ft_filetostr(fd);
@@ -60,6 +60,6 @@ t_board			*read_input(int fd)
 	while (--n_rows >= 0)
 		num_strs[n_rows] = ft_strsplit(two_dstr[n_rows], ' ');
 	free(two_dstr);
-	fb = get_final_board(num_strs);
+	ob = get_final_board(num_strs);
 	return (fb);
 }
