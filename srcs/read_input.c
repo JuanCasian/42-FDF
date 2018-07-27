@@ -20,4 +20,9 @@ void	read_input(int fd)
 	two_dstr = NULL;
 	filestr = ft_filetostr(fd);	
 	two_dstr = ft_strsplit(filestr, '\n');
+	while (*two_dstr)
+	{
+		ft_putendl(two_dstr[0]);
+		two_dstr++;
+	}
 }
