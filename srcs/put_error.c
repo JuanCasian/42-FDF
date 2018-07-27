@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_input.c                                       :+:      :+:    :+:   */
+/*   put_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 14:49:03 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/23 16:23:13 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/25 18:34:41 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/25 18:42:50 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	read_input(int fd)
+void	put_error(int err)
 {
-	char	*filestr;
-	char	**two_dstr;
+	char *errormsg[3];
 
-	two_dstr = NULL;
-	filestr = ft_filetostr(fd);	
-	two_dstr = ft_strsplit(filestr, '\n');
-	while (*two_dstr)
-	{
-		ft_putendl(two_dstr[0]);
-		two_dstr++;
-	}
+	errormsg[0] = "Usage: ./fdf path/to/file";
+	errormsg[1] = "ERROR: Could not open specified file";
+	errormsg[2] = "ERROR: Could not malloc memory";
+	ft_putendl(errormsg[err]);
+	exit(-1);
 }
