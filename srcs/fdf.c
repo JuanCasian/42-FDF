@@ -6,11 +6,17 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 13:46:38 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/26 21:42:50 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/27 13:40:22 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	deal_keys_pt4(int key, t_board **bs)
+{
+	if (key == 125)
+		bs[cb]->origin.y += 10;
+}
 
 void	deal_keys_pt3(int key, t_board **boards)
 {
@@ -29,6 +35,15 @@ void	deal_keys_pt3(int key, t_board **boards)
 		if (boards[cb]->z_angle < 43)
 			boards[cb]->z_angle += 2;
 	}
+	else if (key == 123)
+	{
+		if (boards[cb]->origin.x > 550)
+			boards[cb]->origin.x -= 10;
+	}
+	else if (key == 124)
+		boards[cb]->origin.x += 10;
+	else
+		deal_keys_pt4(key, boards);
 }
 
 void	deal_keys_pt2(int key, t_board **boards)
@@ -64,13 +79,10 @@ int		deal_keys(int key, void *param)
 	if (key == 53)
 		exit(0);
 	else if (key == 126)
-		boards[cb]->origin.y -= 10;
-	else if (key == 125)
-		boards[cb]->origin.y += 10;
-	else if (key == 123)
-		boards[cb]->origin.x -= 10;
-	else if (key == 124)
-		boards[cb]->origin.x += 10;
+	{
+		if (boards[cb]->origin.y > 61)
+			boards[cb]->origin.y -= 10;
+	}
 	else if (key == 34)
 		boards[cb]->separator += 1;
 	else if (key == 31)
@@ -92,7 +104,7 @@ void	fdf(t_board **boards)
 
 	do_calculations(boards);
 	mlx_ptr = mlx_init();
-	win_ptr = mlx_new_window(mlx_ptr, 1000, 1000, "MLX WINDOW");
+	win_ptr = mlx_new_window(mlx_ptr, SWIDTH, SHEIGHT, "MLX WINDOW");
 	boards[ob]->mlx = mlx_ptr;
 	boards[ob]->win = win_ptr;
 	boards[cb]->mlx = mlx_ptr;

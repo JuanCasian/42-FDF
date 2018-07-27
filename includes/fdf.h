@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:34:04 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/26 21:39:09 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/27 13:21:00 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include "libft.h"
 # include "mlx.h"
 # include <math.h>
+
+# define SWIDTH 2040
+# define SHEIGHT 1080
 
 typedef struct	s_pos
 {
@@ -53,5 +56,6 @@ void			draw_map(t_board **bs);
 void			rot_z(t_board **bs);
 void			rot_y(t_board **bs);
 void			rot_x(t_board **bs);
+void			draw_instructions(void *mlx, void *win);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 14:45:45 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/26 20:49:30 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/27 13:22:06 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	draw_line_y(t_pos pos1, t_pos pos2, t_board **bs)
 	{
 		x = (((pos2.x - pos1.x) / (pos2.y - pos1.y)) * (y - pos1.y)) +
 			pos1.x;
-		mlx_pixel_put(bs[cb]->mlx, bs[cb]->win, x, y, 255);
+		mlx_pixel_put(bs[cb]->mlx, bs[cb]->win, x, y, 65280);
 		y++;
 	}
 }
@@ -37,8 +37,46 @@ void	draw_line_x(t_pos pos1, t_pos pos2, t_board **bs)
 	{
 		y = (((pos2.y - pos1.y) / (pos2.x - pos1.x)) * (x - pos1.x)) +
 			pos1.y;
-		mlx_pixel_put(bs[cb]->mlx, bs[cb]->win, x, y, 255);
+		mlx_pixel_put(bs[cb]->mlx, bs[cb]->win, x, y, 65280);
 		x++;
+	}
+}
+
+void	draw_topborder(void *mlx, void *win)
+{
+	int y;
+	int	x;
+	int ylim;
+
+	y = 0;
+	ylim = 50;
+	while (y <= ylim)
+	{
+		x = 0;
+		while (x <= SWIDTH)
+		{
+			mlx_pixel_put(mlx, win, x, y, 16711680);
+			x++;
+		}
+		y++;
+	}
+}
+
+void	draw_bottomborder(void *mlx, void *win)
+{
+	int y;
+	int	x;
+
+	y = SHEIGHT - 50;
+	while (y <= SHEIGHT)
+	{
+		x = 0;
+		while (x <= SWIDTH)
+		{
+			mlx_pixel_put(mlx, win, x, y, 16711680);
+			x++;
+		}
+		y++;
 	}
 }
 
@@ -64,4 +102,7 @@ void	draw_map(t_board **bs)
 		}
 		i++;
 	}
+	draw_topborder(bs[cb]->mlx, bs[cb]->win);
+	draw_bottomborder(bs[cb]->mlx, bs[cb]->win);
+	draw_instructions(bs[cb]->mlx, bs[cb]->win);
 }

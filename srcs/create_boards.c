@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 18:47:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/26 16:40:40 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/27 13:50:13 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void	init_boards_data(t_board **bs)
 	i = 0;
 	while (i < 2)
 	{
-		bs[i]->separator = 30;
-		bs[i]->z_sep = 10;
-		bs[i]->origin.x = 100;
+		bs[i]->separator = 5;
+		bs[i]->z_sep = 1;
+		bs[i]->origin.x = 550;
 		bs[i]->origin.y = 100;
 		bs[i]->origin.z = 0;
 		bs[i]->x_angle = 15;
