@@ -15,7 +15,7 @@ NAME = fdf
 SRCSDIR = srcs
 LIBSDIR = libs
 SRCS = $(addprefix $(SRCSDIR)/,\
-	  main.c put_error.c create_boards.c print_boardsinfo.c fdf.c \
+	  main.c put_error.c create_boards.c fdf.c \
 	  do_calculations.c draw_map.c) 
 INCLUDES = includes
 OBJECTS = $(patsubst %.c, %.o, $(SRCS))

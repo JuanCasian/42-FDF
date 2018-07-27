@@ -30,8 +30,9 @@ typedef struct	s_board
 	double		separator;
 	double		z_sep;
 	t_pos		origin;
-	double		elev_angle;
-	double		rot_angle;
+	double		y_angle;
+	double		x_angle;
+	double		z_angle;
 	int			n_rows;
 	int			n_col;
 	void		*mlx;
@@ -46,7 +47,7 @@ enum			e_boards_names
 
 void			put_error(int err);
 t_board			**create_boards(t_board **boards, int fd);
-void			print_boardsinfo(t_board **boards);
+//void			print_boardsinfo(t_board **boards);
 void			fdf(t_board **boards);
 void			do_calculations(t_board **boards);
 void			draw_map(t_board **bs);

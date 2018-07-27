@@ -18,7 +18,6 @@ void	fdf(t_board **boards)
 	void	*win_ptr;
 
 	do_calculations(boards);
-	print_boardsinfo(boards);
 	mlx_ptr = mlx_init();
 	win_ptr = mlx_new_window(mlx_ptr, 1000, 1000, "MLX WINDOW");
 	boards[ob]->mlx = mlx_ptr;

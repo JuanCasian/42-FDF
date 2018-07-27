@@ -20,12 +20,13 @@ static void	init_boards_data(t_board **bs)
 	while (i < 2)
 	{
 		bs[i]->separator = 30;
-		bs[i]->z_sep = 3;
+		bs[i]->z_sep = 10;
 		bs[i]->origin.x = 100;
 		bs[i]->origin.y = 100;
 		bs[i]->origin.z = 0;
-		bs[i]->elev_angle = 10;
-		bs[i]->rot_angle = 15;
+		bs[i]->x_angle = 15;
+		bs[i]->y_angle = 15;
+		bs[i]->z_angle = 15;
 		i++;
 	}
 }
