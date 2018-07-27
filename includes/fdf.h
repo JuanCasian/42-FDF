@@ -47,7 +47,6 @@ enum			e_boards_names
 
 void			put_error(int err);
 t_board			**create_boards(t_board **boards, int fd);
-//void			print_boardsinfo(t_board **boards);
 void			fdf(t_board **boards);
 void			do_calculations(t_board **boards);
 void			draw_map(t_board **bs);
