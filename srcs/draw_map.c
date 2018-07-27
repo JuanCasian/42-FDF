@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 14:45:45 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/26 16:45:44 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/26 20:49:30 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	draw_map(t_board **bs)
 	int k;
 
 	i = 0;
+	mlx_clear_window(bs[cb]->mlx, bs[cb]->win);
 	while (i < bs[ob]->n_rows)
 	{
 		k = 0;
