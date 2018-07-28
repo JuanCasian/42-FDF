@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:34:04 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/27 13:21:00 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/27 20:22:24 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include "mlx.h"
 # include <math.h>
 
-# define SWIDTH 2040
-# define SHEIGHT 1080
+# define SWIDTH 1400
+# define SHEIGHT 700
 
 typedef struct	s_pos
 {
