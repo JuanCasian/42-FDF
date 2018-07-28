@@ -47,4 +47,4 @@ make fdf
 Ex: ./fdf testfiles/42.fdf
 ```
 ## Author
-Juan Pedro Casian - Github: [JuanCasian](https://github.com/JuanCasian) - Email: juanpedrocasian@gmail.com
+Juan Pedro Casian - Github: [@JuanCasian](https://github.com/JuanCasian) - Email: juanpedrocasian@gmail.com
