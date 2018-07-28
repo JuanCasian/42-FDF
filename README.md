@@ -14,3 +14,4 @@ FDF is the first project in the graphics branch at 42 School Silicon Valley. In 
 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
 ``` 
 In which the position of the numbers give the 'x' and 'y' coordinate while the numbr itself represent the 'z' coordinate.
+![42 Logo](res/example.png)
